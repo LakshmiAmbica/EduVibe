@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Study Logo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            background-color: #ffc0cbf8; /* Light Pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column; /* Stack the logo and button */
+            text-align: center; /* Center the content */
+            position: relative; /* Required for positioning bubbles container */
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 70px;
+            font-weight: bold;
+            color: #8B0000; /* Deep Red */
+            text-shadow: 3px 3px 10px rgba(139, 0, 0, 0.5);
+            margin-bottom: 20px; /* Adds space below the logo */
+            z-index: 2; /* Ensures logo is on top */
+        }
+
+        .logo::before {
+            content: '\1F4D6'; /* Open Book Emoji */
+            font-size: 80px;
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Button Styles */
+        .start-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: rgb(241, 39, 106);  /* Light pink background */
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;  /* Rounded edges */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(230, 161, 34, 0.7);
+            z-index: 2; /* Ensures button is on top */
+        }
+
+        .start-btn:hover {
+            background-color: #e94b59;  /* Darker pink on hover */
+            transform: scale(1.1);  /* Slight zoom effect */
+            cursor: pointer;
+        }
+
+        .start-btn:active {
+            background-color: #ff3385;  /* Darker pink when clicked */
+            transform: scale(1);  /* Reset zoom */
+        }
+
+        /* Bubble Container */
+        .bubble-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            z-index: 1; /* Ensures bubbles are behind the button and logo */
+        }
+
+        /* Bubble Styles */
+        .bubble {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, rgba(128, 0, 128, 0.5) 60%, rgba(128, 0, 128, 0.3) 100%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            animation: floatBounce 5s infinite ease-in-out;
+            box-shadow: 0 0 15px rgba(128, 0, 128, 0.6);
+            opacity: 0.9;
+        }
+
+        .bubble::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0) 80%);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .bubble:nth-child(1) { width: 35px; height: 35px; left: 5%; animation-duration: 3.5s; }
+        .bubble:nth-child(2) { width: 40px; height: 40px; left: 15%; animation-duration: 4.2s; }
+        .bubble:nth-child(3) { width: 30px; height: 30px; left: 25%; animation-duration: 3.8s; }
+        .bubble:nth-child(4) { width: 45px; height: 45px; left: 35%; animation-duration: 4.5s; }
+        .bubble:nth-child(5) { width: 38px; height: 38px; left: 45%; animation-duration: 3.7s; }
+        .bubble:nth-child(6) { width: 32px; height: 32px; left: 55%; animation-duration: 4.1s; }
+        .bubble:nth-child(7) { width: 42px; height: 42px; left: 65%; animation-duration: 3.9s; }
+        .bubble:nth-child(8) { width: 28px; height: 28px; left: 75%; animation-duration: 4.3s; }
+        .bubble:nth-child(9) { width: 36px; height: 36px; left: 85%; animation-duration: 4s; }
+        .bubble:nth-child(10) { width: 33px; height: 33px; left: 95%; animation-duration: 4.4s; }
+
+        @keyframes floatBounce {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-150px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bubbles effect behind the content -->
+    <div class="bubble-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="logo">EduVibe</div>
+    
+    <!-- Start Button that links to 1.html -->
+    <a href="1.html" class="start-btn">Start</a>
+</body>
+</html>
